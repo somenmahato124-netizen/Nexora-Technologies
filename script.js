@@ -220,43 +220,7 @@ if(testimonials.length > 0){
 }
 
 
-/* TYPING EFFECT */
 
-const typingElement =
-document.getElementById(
-    "typing"
-);
-
-const typingText =
-"Turning Ideas into Digital Reality.";
-
-let typingIndex = 0;
-
-function typeText(){
-
-    if(
-        typingElement &&
-        typingIndex <
-        typingText.length
-    ){
-
-        typingElement.innerHTML +=
-        typingText.charAt(
-            typingIndex
-        );
-
-        typingIndex++;
-
-        setTimeout(
-            typeText,
-            80
-        );
-
-    }
-
-}
-
-typeText();
 
 
 /* ACTIVE NAVIGATION */
@@ -403,3 +367,44 @@ window.addEventListener(
 
     }
 );
+
+
+const text = "Turning Ideas Into Digital Reality.";
+const typingElement = document.getElementById("typing");
+
+let index = 0;
+let isDeleting = false;
+
+function typeEffect() {
+
+    if (!isDeleting) {
+        typingElement.textContent =
+        text.substring(0, index + 1);
+        index++;
+
+        if (index === text.length) {
+            isDeleting = true;
+            setTimeout(typeEffect, 1500);
+            return;
+        }
+    } else {
+        typingElement.textContent =
+        text.substring(0, index - 1);
+        index--;
+
+        if (index === 0) {
+            isDeleting = false;
+        }
+    }
+
+    setTimeout(typeEffect,
+    isDeleting ? 80 : 120);
+}
+
+typeEffect();
+
+
+
+function closePopup(){
+    document.getElementById("welcomePopup").style.display = "none";
+}
