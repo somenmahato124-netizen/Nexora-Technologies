@@ -510,7 +510,7 @@ body.dark-mode a{
 
 .footer{
     position:relative;
-    background:url("image/footer_bg.png");
+    background:url("footer.png");
     background-size:110%;
     background-position:center;
     background-repeat:no-repeat;
@@ -1159,3 +1159,43 @@ header{
     backdrop-filter:blur(15px);
     box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
+
+
+
+.page-hero{
+    background: linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+    text-align:center;
+    padding:100px 20px;
+}
+
+.page-hero h1{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.page-hero p{
+    max-width:700px;
+    margin:auto;
+    font-size:1.1rem;
+    line-height:1.8;
+    opacity:0.9;
+}
+
+.hero-btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:12px 28px;
+    background:#00c6ff;
+    color:white;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.hero-btn:hover{
+    transform:translateY(-3px);
+    background:#0099cc;
+}
+
